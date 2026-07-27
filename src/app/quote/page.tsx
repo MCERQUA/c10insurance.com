@@ -46,7 +46,7 @@ export default function QuotePage() {
     Object.entries(formData).forEach(([k, v]) => payload.append(k, v));
     payload.append("coverage-types", selectedCoverages.join(", "));
 
-    await fetch("/", {
+    await fetch('/__forms.html', {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams(
