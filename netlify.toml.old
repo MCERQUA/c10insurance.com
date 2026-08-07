@@ -20,9 +20,3 @@
   [notifications.webhook]
     url = "https://josh.jam-bot.com/social-api/api/leads/webhook/netlify?tenant=josh&site=c10insurance.com"
     events = ["submission_created"]
-
-[[notifications]]
-  form_name = "auto-application"
-  [notifications.webhook]
-    url = "https://josh.jam-bot.com/social-api/api/leads/webhook/netlify?tenant=josh&site=c10insurance.com"
-    events = ["submission_created"]

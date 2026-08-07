@@ -18,5 +18,46 @@
     <input name="phone" type="tel" />
     <input name="message" type="textarea" />
   </form>
+  <!-- Auto / C10 intake - matches /quote-application
+       Fields are verbatim from _app-specs/workers-comp-and-auto-intake/SPEC.md section 2
+       (Josh's 2026-03-31 "Auto Insurance" email + his 2026-05-27 c10insurance.com email).
+       enctype must stay multipart/form-data so Netlify accepts the file uploads. -->
+  <form name="auto-application" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" enctype="multipart/form-data" action="/__forms.html" hidden>
+    <input type="hidden" name="form-name" value="auto-application" />
+    <input name="bot-field" type="text" />
+
+    <!-- Contact block (so the quote has somewhere to go) -->
+    <input name="contact_name" type="text" />
+    <input name="contact_phone" type="tel" />
+    <input name="contact_email" type="email" />
+
+    <!-- Drivers: ALL drivers must be listed or they are not covered -->
+    <input name="driver_names" type="text" />
+    <input name="driver_date_of_birth" type="date" />
+    <input name="driver_license_number" type="text" />
+    <!-- Newline-delimited "name | DOB | licence #" roll-up of the repeating rows above -->
+    <textarea name="driver_names_summary"></textarea>
+    <input name="drivers_licenses" type="file" />
+    <input name="drivers_licenses_2" type="file" />
+    <input name="drivers_licenses_3" type="file" />
+    <input name="drivers_licenses_4" type="file" />
+
+    <!-- Vehicles: ALL vehicles must be listed or they are not covered -->
+    <input name="vehicle_vins" type="text" />
+    <input name="vehicle_description" type="text" />
+    <!-- Newline-delimited "VIN | description" roll-up of the repeating rows above -->
+    <textarea name="vehicle_vins_summary"></textarea>
+    <input name="vehicle_photos" type="file" />
+    <input name="vehicle_photos_2" type="file" />
+    <input name="vehicle_photos_3" type="file" />
+    <input name="vehicle_photos_4" type="file" />
+
+    <!-- Prior auto insurance of any type, incl. a family member in the same household -->
+    <input name="prior_carrier_name" type="text" />
+    <input name="prior_auto_insurance" type="file" />
+    <textarea name="prior_auto_insurance_details"></textarea>
+
+    <input type="submit" value="Submit" />
+  </form>
 </body>
 </html>
