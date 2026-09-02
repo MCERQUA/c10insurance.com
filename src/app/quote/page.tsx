@@ -25,6 +25,19 @@ export default function QuotePage() {
     "annual-revenue": "",
     employees: "",
     message: "",
+    street_address: "",
+    drivers_license_issue_date: "",
+    drivers_license_expiration_date: "",
+    vehicle_year: "",
+    vehicle_make: "",
+    vehicle_model: "",
+    vehicle_value: "",
+    accessories_description: "",
+    accessories_value: "",
+    current_policy_number: "",
+    current_policy_start_date: "",
+    current_policy_expiration_date: "",
+    current_coverage_limits: "",
   });
 
   const handleChange = (
@@ -46,13 +59,15 @@ export default function QuotePage() {
     Object.entries(formData).forEach(([k, v]) => payload.append(k, v));
     payload.append("coverage-types", selectedCoverages.join(", "));
 
-    await fetch('/__forms.html', {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(
-        Object.fromEntries(payload.entries()) as Record<string, string>
-      ).toString(),
-    });
+    // multipart, not urlencoded: the licence and insurance-card fields are file inputs
+    // and a urlencoded body would send only their filenames. Only the active wizard step
+    // is mounted, so the text fields come from state (above) and the files are read from
+    // the DOM here — they render on this last step.
+    for (const id of ["drivers_license_upload", "insurance_card_upload"]) {
+      const el = document.getElementById(id) as HTMLInputElement | null;
+      if (el?.files?.[0]) payload.append(id, el.files[0]);
+    }
+    await fetch('/__forms.html', { method: "POST", body: payload });
     setSubmitted(true);
   };
 
@@ -146,6 +161,7 @@ export default function QuotePage() {
         <form
           name="quote"
           data-netlify="true"
+          encType="multipart/form-data"
           onSubmit={handleSubmit}
           className="bg-white rounded-2xl shadow-sm border border-slate-100 p-8"
         >
@@ -399,6 +415,182 @@ export default function QuotePage() {
                   844-967-5247
                 </a>{" "}
                 directly.
+              </div>
+
+              {/* Completes the insurance-auto-powersports class field set. */}
+              <div className="pt-6 mt-6 border-t border-slate-100">
+                <h3 className="text-lg font-bold text-slate-900 mb-1">Driver, Vehicle &amp; Current Policy</h3>
+                <p className="text-sm text-slate-500 mb-5">
+                  Have these ready: your driver&apos;s licence, the VIN for every vehicle and
+                  trailer, and your current insurance ID card. Prefer not to type them? Email or
+                  text them to us and we&apos;ll quote from that. Every driver and every vehicle
+                  must be listed or they are not covered.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div>
+                    <label className="block text-sm font-medium text-slate-700 mb-1.5">Street address *</label>
+                    <input
+                      name="street_address"
+                      type="text"
+                      required
+                      value={formData["street_address" as keyof typeof formData]}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent text-slate-900 bg-white"
+                      placeholder="1234 W Main St, Phoenix, AZ 85001"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-slate-700 mb-1.5">Driver's license issue date *</label>
+                    <input
+                      name="drivers_license_issue_date"
+                      type="date"
+                      required
+                      value={formData["drivers_license_issue_date" as keyof typeof formData]}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent text-slate-900 bg-white"
+                      
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-slate-700 mb-1.5">Driver's license expiration date *</label>
+                    <input
+                      name="drivers_license_expiration_date"
+                      type="date"
+                      required
+                      value={formData["drivers_license_expiration_date" as keyof typeof formData]}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent text-slate-900 bg-white"
+                      
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-slate-700 mb-1.5">Driver's license — photo upload</label>
+                    <input id="drivers_license_upload" name="drivers_license_upload" type="file" accept="image/*,application/pdf" className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent text-slate-900 bg-white" />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-slate-700 mb-1.5">Vehicle year *</label>
+                    <input
+                      name="vehicle_year"
+                      type="text"
+                      required
+                      value={formData["vehicle_year" as keyof typeof formData]}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent text-slate-900 bg-white"
+                      placeholder="2021"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-slate-700 mb-1.5">Vehicle make *</label>
+                    <input
+                      name="vehicle_make"
+                      type="text"
+                      required
+                      value={formData["vehicle_make" as keyof typeof formData]}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent text-slate-900 bg-white"
+                      
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-slate-700 mb-1.5">Vehicle model *</label>
+                    <input
+                      name="vehicle_model"
+                      type="text"
+                      required
+                      value={formData["vehicle_model" as keyof typeof formData]}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent text-slate-900 bg-white"
+                      
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-slate-700 mb-1.5">Vehicle value *</label>
+                    <input
+                      name="vehicle_value"
+                      type="text"
+                      required
+                      value={formData["vehicle_value" as keyof typeof formData]}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent text-slate-900 bg-white"
+                      placeholder="$45,000"
+                    />
+                  </div>
+                  <div className="sm:col-span-2">
+                    <label className="block text-sm font-medium text-slate-700 mb-1.5">Description of accessories *</label>
+                    <textarea
+                      name="accessories_description"
+                      rows={3}
+                      required
+                      value={formData["accessories_description" as keyof typeof formData]}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent text-slate-900 bg-white"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-slate-700 mb-1.5">Value of accessories *</label>
+                    <input
+                      name="accessories_value"
+                      type="text"
+                      required
+                      value={formData["accessories_value" as keyof typeof formData]}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent text-slate-900 bg-white"
+                      placeholder="$2,500"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-slate-700 mb-1.5">Current policy number *</label>
+                    <input
+                      name="current_policy_number"
+                      type="text"
+                      required
+                      value={formData["current_policy_number" as keyof typeof formData]}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent text-slate-900 bg-white"
+                      
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-slate-700 mb-1.5">Policy start date *</label>
+                    <input
+                      name="current_policy_start_date"
+                      type="date"
+                      required
+                      value={formData["current_policy_start_date" as keyof typeof formData]}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent text-slate-900 bg-white"
+                      
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-slate-700 mb-1.5">Policy expiration date *</label>
+                    <input
+                      name="current_policy_expiration_date"
+                      type="date"
+                      required
+                      value={formData["current_policy_expiration_date" as keyof typeof formData]}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent text-slate-900 bg-white"
+                      
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-slate-700 mb-1.5">Current coverage limits *</label>
+                    <input
+                      name="current_coverage_limits"
+                      type="text"
+                      required
+                      value={formData["current_coverage_limits" as keyof typeof formData]}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent text-slate-900 bg-white"
+                      placeholder="100/300/100"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-slate-700 mb-1.5">Current insurance ID card — upload</label>
+                    <input id="insurance_card_upload" name="insurance_card_upload" type="file" accept="image/*,application/pdf" className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent text-slate-900 bg-white" />
+                  </div>
+                </div>
               </div>
 
               <div className="flex gap-3">
