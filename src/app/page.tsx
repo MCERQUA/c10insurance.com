@@ -517,55 +517,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-14"
-          >
-            <h2 className="text-4xl font-black text-slate-900 mb-4">
-              What California Electricians Say
-            </h2>
-            <p className="text-lg text-slate-600">
-              Hundreds of C10 electrical contractors trust us to protect their businesses.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((t, i) => (
-              <motion.div
-                key={t.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-slate-50 rounded-2xl p-7 border border-slate-100"
-              >
-                <div className="flex gap-1 mb-4">
-                  {Array.from({ length: t.rating }).map((_, j) => (
-                    <Star key={j} size={16} className="fill-accent-400 text-accent-400" />
-                  ))}
-                </div>
-                <p className="text-slate-700 text-sm leading-relaxed mb-5 italic">
-                  &ldquo;{t.text}&rdquo;
-                </p>
-                <div>
-                  <p className="font-bold text-slate-900">{t.name}</p>
-                  <p className="text-sm text-slate-500">{t.company}</p>
-                  <div className="flex items-center gap-1 mt-1 text-xs text-slate-400">
-                    <MapPin size={11} />
-                    {t.location}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* FAQ */}
       <section className="py-20 bg-slate-50">
         <div className="max-w-4xl mx-auto px-4">
