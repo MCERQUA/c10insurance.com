@@ -62,9 +62,6 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  alternates: {
-    canonical: "https://c10insurance.com",
-  },
 };
 
 const jsonLd = {
