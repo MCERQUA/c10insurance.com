@@ -47,7 +47,7 @@ export default function AboutPage() {
           <h1 className="text-5xl font-black mb-5">
             About Contractors Choice Agency
           </h1>
-          <p className="text-xl text-blue-100 leading-relaxed max-w-2xl">
+          <p className="text-xl text-orange-100 leading-relaxed max-w-2xl">
             We&apos;re not a big-box insurance broker. We&apos;re a specialized
             agency built by a former contractor who understands exactly what it
             takes to run a C10 electrical business in California.
@@ -132,7 +132,7 @@ export default function AboutPage() {
             <div className="grid grid-cols-2 gap-4">
               <div className="bg-brand-700 text-white rounded-2xl p-5 text-center">
                 <div className="text-3xl font-black mb-1">20+</div>
-                <div className="text-blue-200 text-sm">Years in Business</div>
+                <div className="text-orange-200 text-sm">Years in Business</div>
               </div>
               <div className="bg-slate-900 text-white rounded-2xl p-5 text-center">
                 <div className="text-3xl font-black mb-1">50</div>

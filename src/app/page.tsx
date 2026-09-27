@@ -227,7 +227,7 @@ export default function HomePage() {
               <span className="text-accent-400">California C10</span>{" "}
               Electrical Contractors
             </h1>
-            <p className="text-xl text-blue-100 mb-8 leading-relaxed max-w-2xl">
+            <p className="text-xl text-orange-100 mb-8 leading-relaxed max-w-2xl">
               Get specialized coverage designed for licensed electrical
               contractors — general liability, workers comp, commercial auto,
               tools & equipment, and contractor bonds. Quote in 15 minutes.
@@ -247,7 +247,7 @@ export default function HomePage() {
                 844-967-5247
               </a>
             </div>
-            <div className="mt-8 flex flex-wrap gap-5 text-sm text-blue-200">
+            <div className="mt-8 flex flex-wrap gap-5 text-sm text-orange-200">
               <span className="flex items-center gap-1.5"><CheckCircle size={15} className="text-accent-400" /> 15-min quotes</span>
               <span className="flex items-center gap-1.5"><CheckCircle size={15} className="text-accent-400" /> All 50 states</span>
               <span className="flex items-center gap-1.5"><CheckCircle size={15} className="text-accent-400" /> A+ rated carriers</span>
@@ -377,7 +377,7 @@ export default function HomePage() {
                   <h3 className="text-lg font-bold mb-2">
                     Not sure what you need?
                   </h3>
-                  <p className="text-blue-100 text-sm leading-relaxed">
+                  <p className="text-orange-100 text-sm leading-relaxed">
                     Our C10 specialists will review your business and recommend
                     the right coverage mix for your specific situation.
                   </p>
@@ -432,7 +432,7 @@ export default function HomePage() {
               />
               <div className="absolute -bottom-4 -right-4 bg-brand-700 text-white rounded-xl p-4 shadow-xl">
                 <p className="font-black text-2xl">20+</p>
-                <p className="text-blue-100 text-xs">Years Protecting<br />Contractors</p>
+                <p className="text-orange-100 text-xs">Years Protecting<br />Contractors</p>
               </div>
             </motion.div>
           </div>
@@ -576,7 +576,7 @@ export default function HomePage() {
             <h2 className="text-4xl md:text-5xl font-black mb-5">
               Protect Your C10 Electrical Business Today
             </h2>
-            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-orange-100 mb-8 max-w-2xl mx-auto">
               Join hundreds of California electrical contractors who trust
               Contractors Choice Agency for fast, affordable, specialized
               insurance coverage.

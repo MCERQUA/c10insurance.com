@@ -53,12 +53,12 @@ export default function GeneralLiabilityPage() {
             <div className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center">
               <Shield size={20} />
             </div>
-            <span className="text-sm font-medium text-blue-200">Coverage Guide</span>
+            <span className="text-sm font-medium text-orange-200">Coverage Guide</span>
           </div>
           <h1 className="text-5xl font-black mb-5">
             General Liability Insurance for C10 Electrical Contractors
           </h1>
-          <p className="text-xl text-blue-100 leading-relaxed max-w-2xl">
+          <p className="text-xl text-orange-100 leading-relaxed max-w-2xl">
             The most essential coverage for California electrical contractors.
             Protect your business from third-party injury and property damage
             claims with limits designed for C10 work.
@@ -198,7 +198,7 @@ export default function GeneralLiabilityPage() {
           <div className="space-y-5">
             <div className="bg-brand-700 text-white rounded-2xl p-6">
               <h3 className="font-bold text-lg mb-2">Get a GL Quote</h3>
-              <p className="text-blue-100 text-sm mb-4">
+              <p className="text-orange-100 text-sm mb-4">
                 Custom general liability quote for your C10 electrical business
                 in 15 minutes.
               </p>

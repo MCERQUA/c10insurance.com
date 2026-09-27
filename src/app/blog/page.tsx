@@ -20,7 +20,7 @@ export default function BlogPage() {
           <h1 className="text-5xl font-black mb-4">
             C10 Insurance Resource Center
           </h1>
-          <p className="text-xl text-blue-100 max-w-2xl">
+          <p className="text-xl text-orange-100 max-w-2xl">
             Expert guides on insurance requirements, coverage options, and
             compliance for California C10 licensed electrical contractors.
           </p>
@@ -83,7 +83,7 @@ export default function BlogPage() {
           <h2 className="text-2xl font-black mb-3">
             Ready to Get Your C10 Insurance?
           </h2>
-          <p className="text-blue-100 mb-6 max-w-xl mx-auto">
+          <p className="text-orange-100 mb-6 max-w-xl mx-auto">
             Put our expertise to work for your electrical business. Get a custom
             quote in 15 minutes from California&apos;s C10 insurance specialists.
           </p>

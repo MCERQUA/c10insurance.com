@@ -26,12 +26,12 @@ export default function ContractorBondPage() {
             <div className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center">
               <FileText size={20} />
             </div>
-            <span className="text-sm font-medium text-blue-200 uppercase tracking-wide">CSLB Required</span>
+            <span className="text-sm font-medium text-orange-200 uppercase tracking-wide">CSLB Required</span>
           </div>
           <h1 className="text-5xl font-black mb-5">
             C10 Contractor License Bond in California
           </h1>
-          <p className="text-xl text-blue-100 max-w-2xl leading-relaxed">
+          <p className="text-xl text-orange-100 max-w-2xl leading-relaxed">
             Every California C10 electrical contractor must maintain a $25,000
             contractor license bond through the CSLB. Without it, your license
             is invalid and you can&apos;t legally operate. We issue bonds same-day.
@@ -92,7 +92,7 @@ export default function ContractorBondPage() {
                   "Non-payment to subcontractors and material suppliers",
                   "Financial harm caused by contractor misconduct",
                 ].map((item) => (
-                  <div key={item} className="flex items-start gap-3 p-4 bg-blue-50 rounded-xl">
+                  <div key={item} className="flex items-start gap-3 p-4 bg-orange-50 rounded-xl">
                     <CheckCircle size={18} className="text-brand-600 flex-shrink-0 mt-0.5" />
                     <span className="text-sm text-slate-700">{item}</span>
                   </div>
@@ -176,7 +176,7 @@ export default function ContractorBondPage() {
           <div className="space-y-5">
             <div className="bg-brand-700 text-white rounded-2xl p-6">
               <h3 className="font-bold text-lg mb-2">Get Bonded Today</h3>
-              <p className="text-blue-100 text-sm mb-4">
+              <p className="text-orange-100 text-sm mb-4">
                 Same-day C10 contractor bond issuance. Keep your CSLB license
                 active and compliant.
               </p>

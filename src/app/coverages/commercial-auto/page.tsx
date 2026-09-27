@@ -26,12 +26,12 @@ export default function CommercialAutoPage() {
             <div className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center">
               <Car size={20} />
             </div>
-            <span className="text-sm font-medium text-blue-200 uppercase tracking-wide">Fleet Coverage</span>
+            <span className="text-sm font-medium text-orange-200 uppercase tracking-wide">Fleet Coverage</span>
           </div>
           <h1 className="text-5xl font-black mb-5">
             Commercial Auto Insurance for C10 Electrical Contractors
           </h1>
-          <p className="text-xl text-blue-100 max-w-2xl leading-relaxed">
+          <p className="text-xl text-orange-100 max-w-2xl leading-relaxed">
             Your work van is your business. Personal auto insurance doesn&apos;t cover
             vehicles used commercially — one accident while driving to a job site
             without the right coverage can cost you everything.
@@ -138,7 +138,7 @@ export default function CommercialAutoPage() {
           <div className="space-y-5">
             <div className="bg-brand-700 text-white rounded-2xl p-6">
               <h3 className="font-bold text-lg mb-2">Get a Commercial Auto Quote</h3>
-              <p className="text-blue-100 text-sm mb-4">
+              <p className="text-orange-100 text-sm mb-4">
                 Tell us how many vehicles you have and we&apos;ll find the best
                 commercial auto rate for your C10 business.
               </p>

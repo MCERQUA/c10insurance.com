@@ -123,7 +123,7 @@ export default function ContactPage() {
 
             <div className="bg-brand-700 text-white rounded-2xl p-6">
               <h3 className="font-bold text-lg mb-2">Need a Quote Instead?</h3>
-              <p className="text-blue-100 text-sm mb-4">
+              <p className="text-orange-100 text-sm mb-4">
                 If you&apos;re looking for pricing on C10 electrical contractor
                 insurance, our online quote form gets you a custom quote in 15
                 minutes.

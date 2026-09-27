@@ -114,7 +114,7 @@ export default async function BlogPostPage({ params }: Props) {
               {post.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="inline-flex items-center gap-1 text-xs font-medium text-blue-200 bg-white/10 px-2.5 py-1 rounded-full"
+                  className="inline-flex items-center gap-1 text-xs font-medium text-orange-200 bg-white/10 px-2.5 py-1 rounded-full"
                 >
                   <Tag size={10} />
                   {tag}
@@ -124,10 +124,10 @@ export default async function BlogPostPage({ params }: Props) {
             <h1 className="text-3xl md:text-4xl font-black mb-5 leading-tight">
               {post.title}
             </h1>
-            <p className="text-blue-100 text-lg leading-relaxed mb-6">
+            <p className="text-orange-100 text-lg leading-relaxed mb-6">
               {post.description}
             </p>
-            <div className="flex flex-wrap items-center gap-5 text-sm text-blue-200">
+            <div className="flex flex-wrap items-center gap-5 text-sm text-orange-200">
               <div className="flex items-center gap-1.5">
                 <Calendar size={14} />
                 {new Date(post.date).toLocaleDateString("en-US", {

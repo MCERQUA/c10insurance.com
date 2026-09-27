@@ -14,7 +14,7 @@ const coverages = [
     title: "General Liability Insurance",
     href: "/coverages/general-liability",
     badge: "Most Popular",
-    badgeColor: "bg-blue-100 text-blue-700",
+    badgeColor: "bg-orange-100 text-orange-700",
     description:
       "Protects your electrical business from third-party claims of bodily injury or property damage. Required by most commercial clients and job site contracts. Available in $1M, $2M, and higher limits.",
     highlights: [
@@ -82,7 +82,7 @@ const coverages = [
     title: "Contractor License Bond",
     href: "/coverages/contractor-bond",
     badge: "License Requirement",
-    badgeColor: "bg-purple-100 text-purple-700",
+    badgeColor: "bg-amber-100 text-amber-800",
     description:
       "California's CSLB requires all C10 electrical contractors to carry a $25,000 contractor license bond. This protects your clients, not you — but it's mandatory to maintain your license and legally operate.",
     highlights: [
@@ -105,7 +105,7 @@ export default function CoveragesPage() {
           <h1 className="text-5xl font-black mb-4">
             Insurance Coverages for C10 Electrical Contractors
           </h1>
-          <p className="text-xl text-blue-100 leading-relaxed max-w-2xl">
+          <p className="text-xl text-orange-100 leading-relaxed max-w-2xl">
             Every coverage California C10 licensed electrical contractors need —
             from general liability to contractor bonds. Get all your policies in
             one place with one specialist who knows your business.
@@ -179,7 +179,7 @@ export default function CoveragesPage() {
           <h2 className="text-3xl font-black mb-4">
             Bundle and Save — Get All Coverages in One Policy
           </h2>
-          <p className="text-blue-100 max-w-2xl mx-auto mb-8">
+          <p className="text-orange-100 max-w-2xl mx-auto mb-8">
             Most C10 electrical contractors need multiple coverages. We
             specialize in bundling GL, workers comp, commercial auto, and tools
             coverage for maximum savings and simplified management.

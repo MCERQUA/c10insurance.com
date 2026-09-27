@@ -28,7 +28,7 @@ body {
 
 .circuit-bg {
   background-image:
-    linear-gradient(rgba(29, 78, 216, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(29, 78, 216, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(154, 52, 18, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(154, 52, 18, 0.03) 1px, transparent 1px);
   background-size: 40px 40px;
 }
