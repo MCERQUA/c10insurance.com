@@ -5,6 +5,7 @@ import Footer from "@/components/ui/Footer";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://c10insurance.com"),
+  icons: { icon: [{ url: "/favicon.svg", type: "image/svg+xml" }, { url: "/favicon.ico", sizes: "32x32" }] },
   title: {
     default: "C10 Insurance | California Electrical Contractor Insurance",
     template: "%s | C10 Insurance",
