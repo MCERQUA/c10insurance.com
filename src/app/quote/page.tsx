@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useDomSync } from "@/lib/useDomSync";
 import Link from "next/link";
 import { CheckCircle, ArrowRight, ArrowLeft, Phone, Zap } from "lucide-react";
 
@@ -13,6 +14,7 @@ const coverageOptions = [
 ];
 
 export default function QuotePage() {
+  useDomSync();
   const [step, setStep] = useState(1);
   const [submitted, setSubmitted] = useState(false);
   const [selectedCoverages, setSelectedCoverages] = useState<string[]>([]);

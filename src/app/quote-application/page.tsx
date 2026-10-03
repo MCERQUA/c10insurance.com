@@ -10,6 +10,7 @@
 // the browser still gets a 200 and the lead is destroyed.
 
 import { useState } from "react";
+import { useDomSync } from "@/lib/useDomSync";
 import Link from "next/link";
 import {
   AlertTriangle,
@@ -47,6 +48,7 @@ const fileClass =
   "w-full text-sm text-slate-600 file:mr-4 file:py-2.5 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-brand-50 file:text-brand-700 hover:file:bg-brand-100 border border-slate-200 rounded-xl p-2";
 
 export default function QuoteApplicationPage() {
+  useDomSync();
   const [drivers, setDrivers] = useState([{ name: "", dob: "", license: "" }]);
   const [vins, setVins] = useState([{ vin: "", description: "" }]);
   const [licenseSlots, setLicenseSlots] = useState(1);
